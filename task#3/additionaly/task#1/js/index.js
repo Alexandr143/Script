@@ -116,3 +116,32 @@
 // };
 
 // fnC();
+
+// if (true) {
+//   let a =5; 
+//   console.log (a)
+// };
+
+const globalVar = 123123;
+
+const fnY = function () {
+    let z = 15; 
+    const fnZ= function (){
+        console.log (z);
+        console.log (globalVar);
+    };
+
+    fnZ();
+    
+    return z;
+};
+
+let x =10;
+
+const fnX = function (){
+    let y =5;
+
+    console.log(fnY());
+};
+
+fnY();
