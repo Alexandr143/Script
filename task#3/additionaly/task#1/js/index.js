@@ -184,34 +184,36 @@
 //         return largestNumber;
 // };
 
-// const numbers1 = [200, 6, 34, 4, 9, 12, 56];
-// const numbers2 = [200, 6, 3400, 40000, 9, 102, 56];
+// // const numbers1 = [200, 6, 34, 4, 9, 12, 56];
+// // const numbers2 = [200, 6, 3400, 40000, 9, 102, 56];
 
-// const result1 = findLargestNumber(numbers1);
-// const result2 = findLargestNumber(numbers2);
+// // const result1 = findLargestNumber(numbers1);
+// // const result2 = findLargestNumber(numbers2);
 
-// console.log(result1);
-// console.log(result2);
+// // console.log(result1);
+// // console.log(result2);
 
-const transformArray = function(arr){
-    const newArr =[];
-    for(let item of arr){
-        newArr.push(Number(item));
-    }
-    return newArr;
-};
+// const transformArray = function(arr){
+//     const newArr =[];
+//     for(let item of arr){
+//         newArr.push(Number(item));
+//     }
+//     return newArr;
+// };
 
-const getUserInput = function () {
-    const input = prompt ('Please enter numbers throught virgule');
-    if (input === null){
-        return;
-    }
-    const arr = input.split(',');
-    const transformArr = transformArray(arr);
-    console.log (transformArr);
-    return arr;
+// const getUserInput = function () {
+//     const input = prompt ('Please enter numbers throught virgule');
+//     if (input === null){
+//         return;
+//     }
+//     const arr = input.split(',');
+//     const transformArr = transformArray(arr);
+//     // console.log (transformArr);
+//     return transformArr;
 
-};
+// };
 
-const userInput = getUserInput();
-console.log(userInput);
+// const userInput = getUserInput();
+// const num = findLargestNumber(userInput);
+// console.log(num);
+
