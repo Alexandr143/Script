@@ -122,26 +122,96 @@
 //   console.log (a)
 // };
 
-const globalVar = 123123;
+// const globalVar = 123123;
 
-const fnY = function () {
-    let z = 15; 
-    const fnZ= function (){
-        console.log (z);
-        console.log (globalVar);
-    };
+// const fnY = function () {
+//     let z = 15; 
+//     const fnZ= function (){
+//         console.log (z);
+//         console.log (globalVar);
+//     };
 
-    fnZ();
+//     fnZ();
+
+//     return z;
+// };
+
+// let x =10;
+
+// const fnX = function (){
+//     let y =5;
+
+//     console.log(fnY());
+// };
+
+// fnY();
+
+// ==================
+
+// let  x= 5; 
+
+// const fn = function (){
+//     let x = 10; 
+//     console.log (x);
+// };
+
+// console.log(x);
+// fn();
+   
+// =============
+// const numbers = [200, 6, 34, 4, 9, 12, 56];
+
+// let largestNumber = numbers[0]; 
+
+// for(let i = 1, max = numbers.length; i < max; i +=1) {
+//     const elem = numbers[i];
+//     if (largestNumber< elem){
+//         largestNumber= elem;
+//     }
+// }
+
+// console.log (largestNumber);
+
+// const findLargestNumber = function (arr){
+//     let largestNumber = arr[0];
     
-    return z;
+//     for(let i = 1, max = arr.length; i < max; i +=1) {
+//              const elem = arr[i];
+//             if (largestNumber< elem){
+//                 largestNumber= elem;
+//            };
+//         };
+//         return largestNumber;
+// };
+
+// const numbers1 = [200, 6, 34, 4, 9, 12, 56];
+// const numbers2 = [200, 6, 3400, 40000, 9, 102, 56];
+
+// const result1 = findLargestNumber(numbers1);
+// const result2 = findLargestNumber(numbers2);
+
+// console.log(result1);
+// console.log(result2);
+
+const transformArray = function(arr){
+    const newArr =[];
+    for(let item of arr){
+        newArr.push(Number(item));
+    }
+    return newArr;
 };
 
-let x =10;
+const getUserInput = function () {
+    const input = prompt ('Please enter numbers throught virgule');
+    if (input === null){
+        return;
+    }
+    const arr = input.split(',');
+    const transformArr = transformArray(arr);
+    console.log (transformArr);
+    return arr;
 
-const fnX = function (){
-    let y =5;
-
-    console.log(fnY());
 };
 
-fnY();
+const userInput = getUserInput();
+console.log(userInput);
