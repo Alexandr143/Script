@@ -65,5 +65,54 @@
 // //         newArr2.push(item);
 // //     }
 // // }
-
 // // console.log (newArr2);
+
+
+// console.log(multiply1 (2,3));
+// function multiply1(x, y) {
+//     const result = x * y;
+//     return result ;
+// }
+
+
+
+// const multiply2 = function (x = 6, y = 5) {
+//     const result = x * y;
+//     return result ;
+// }
+
+// console.log(multiply2 (2,3));
+
+
+// const multiply = function (a, b){
+//     return a * b;
+// }
+
+// const square = function (n){
+//     const result = multiply (n, n);
+//     return result;
+// };
+
+// const printSquare = function (n){
+//   const result = square(n);
+//   console.log (result);
+// }
+
+// printSquare(4);
+
+
+// const fnA = function() {
+//     console.log ('a');
+// };
+
+// const fnB = function() {
+//     console.log ('b');
+// };
+
+// const fnC = function() {
+//     fnA();
+//     fnB();
+//     console.log ('c');
+// };
+
+// fnC();
