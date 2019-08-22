@@ -217,3 +217,29 @@
 // const num = findLargestNumber(userInput);
 // console.log(num);
 
+// ========================
+
+// const summ = function(a,b){
+//     // const args = Array.from(arguments);  
+//     const args = [...arguments];  
+//     let result = 0;
+//     console.log ('arguments ', arguments);
+//     console.log (' args: ', args);
+//     // console.log (arguments.length);
+//     for (let item of arguments){
+//         // console.log(item);
+//         result +=item;
+//     };
+//     return result;
+
+// };
+
+// console.log(summ (1, 2, 3, 4, 5, 6));
+
+// const x = [1,2,3,4,5];
+
+// const [y,...rest] = x;
+
+// console.log(y);
+// console.log (rest);
+
