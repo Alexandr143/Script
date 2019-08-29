@@ -43,6 +43,7 @@ const login = prompt('Could you please enter password ?','');
 
 const isLoginValid = function(login) {
       if  (login.length < 4 || login.length > 16){
+        alert('ERROR! Password must be included from 4 to 16 symbols');
         return false;
       };
         return true;
@@ -51,22 +52,24 @@ const isLoginValid = function(login) {
   const isLoginUnique = function (login) {
         for ( let i = 0; i < logins.length; i++){
           if (logins.includes(login)){
+            alert('Password is useded!');
             return false;
           };
           return true;
-        }
+        };
+
     };
     
   const addLogin = function(login) {
-      if (isLoginValid === true ){
-        logins.push(login);
-      }; 
-      return;  
-};
+        if (isLoginValid(login) && isLoginUnique(login)){ 
+             alert('Password is added successful!');
+             logins.push(login);
+        };
+        return;
+        };
+        
  
-console.log(isLoginValid(login));
-console.log(isLoginUnique(login));
-console.log(addLogin(logins));
+console.log(addLogin(login));
 console.log(logins);
 
 // // Вызовы функции для проверки
