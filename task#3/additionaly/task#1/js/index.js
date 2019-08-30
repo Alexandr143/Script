@@ -243,3 +243,90 @@
 // console.log(y);
 // console.log (rest);
 
+// Global ={}
+
+// // trhis would  not do it 
+// const add = function (){
+//      return number + 10;
+// };
+
+// const  number = 5;
+
+// console.log(add());
+
+// let x = 10;
+
+// function foo(){
+//     let y = 20;
+
+//     function bar () {
+//         let  z = 15;
+//         return x + y + z;
+//     }
+
+//      bar();
+// }
+
+// foo(bar);
+
+// const arr = [1,2,3];
+
+// arr.push (4);
+
+// console.log (arr);
+
+
+// const fn = function (){
+//     console.log (arguments);
+// };
+
+// fn ();
+
+// const fn = (... args) => {
+//     console.log (args);
+// };
+
+// fn (1,2,3,4);
+
+// const a = 5;
+
+// const fn = (b,c) =>  a + b + c;
+
+// console.log (fn(10,15));
+
+// const hasElement = (arr, el ) => {
+//     const result  = arr.includes(el);
+//     return result; 
+// };
+
+// const hasElement = (arr, el ) => arr.includes(el);
+
+// const x = hasElement ([1,2,3],5);
+
+// console.log(x);
+
+// =======================
+
+// const x =function () {
+//     console.log('');
+// };
+
+const logger = function (val) {
+    console.log('Logger output: ', val);
+};
+
+const findNumber = function (arr, num, log) {
+       const  hasNumber = arr.includes(num);
+
+       console.log ('findNumber!!!:  ', log);
+       
+       if (hasNumber){
+           log('find');
+       } else { 
+           log('dontn`t find');
+       };
+};
+
+const numbers = [1,2,3,4,5];
+
+findNumber(numbers, 6 , logger);

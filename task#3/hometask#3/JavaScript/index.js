@@ -39,6 +39,7 @@
 
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
+const allLogins = logins;
 const login = prompt('Could you please enter password ?','');
 
 const isLoginValid = function(login) {
@@ -49,9 +50,9 @@ const isLoginValid = function(login) {
         return true;
 };
  
-  const isLoginUnique = function (login) {
+  const isLoginUnique = function (allLogins,login) {
         for ( let i = 0; i < logins.length; i++){
-          if (logins.includes(login)){
+          if (allLogins.includes(login)){
             alert('Password is useded!');
             return false;
           };
@@ -61,15 +62,15 @@ const isLoginValid = function(login) {
     };
     
   const addLogin = function(login) {
-        if (isLoginValid(login) && isLoginUnique(login)){ 
+        if (isLoginValid(login) && isLoginUnique(allLogins,login)){ 
              alert('Password is added successful!');
-             logins.push(login);
+             allLogins.push(login);
         };
         return;
         };
         
  
-console.log(addLogin(login));
+addLogin(login);
 console.log(logins);
 
 // // Вызовы функции для проверки
