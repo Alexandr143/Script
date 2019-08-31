@@ -1,4 +1,4 @@
-`user strict`
+`use strict`
 
 // /*
 //   Напиши функцию checkNumberType(num)
@@ -361,9 +361,15 @@
 //     let input = 5;
 
 //     console.log(input + 5);
-// })();
+// }());
 
-// (function() {
-//   let input = 10;
-//   console.log(input + 10)
-// })();
+
+// (function(){
+//     let input = 10;
+
+//     console.log(input + 10);
+// }());
+
+
+
+
