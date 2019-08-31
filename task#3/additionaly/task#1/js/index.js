@@ -311,22 +311,59 @@
 //     console.log('');
 // };
 
-const logger = function (val) {
-    console.log('Logger output: ', val);
-};
+// const logger = function (val) {
+//     console.log('Logger output: ', val);
+// };
 
-const findNumber = function (arr, num, log) {
-       const  hasNumber = arr.includes(num);
+// const findNumber = function (arr, num, log) {
+//        const  hasNumber = arr.includes(num);
 
-       console.log ('findNumber!!!:  ', log);
+//        console.log ('findNumber!!!:  ', log);
        
-       if (hasNumber){
-           log('find');
-       } else { 
-           log('dontn`t find');
-       };
-};
+//        if (hasNumber){
+//            log('find');
+//        } else { 
+//            log('dontn`t find');
+//        };
+// };
 
-const numbers = [1,2,3,4,5];
+// const numbers = [1,2,3,4,5];
 
-findNumber(numbers, 6 , logger);
+// findNumber(numbers, 6 , logger);
+
+// const showSuccess = () =>  console.log('SUCCESS');
+// const showeError = () => console.log('ERROR');
+// const showeGoodbye  = () => console.log('GOODBYE');
+
+// const getNumber = function (onSuccess,onError,onCancel) {
+//     const input = prompt('Please give me the number ftom 1 to 5');
+//     if (input === null){
+//         onCancel();
+//         return;
+//     };
+    
+//     if  (input < 1 || input > 5){
+//         onError();
+//         return;
+//     };
+    
+//         onSuccess();
+//     // if(input  !== null && input >=1 && input <= 5){
+//     //    console.log('SUCCESS');
+//     // };
+// };
+
+// getNumber(showSuccess, showeError, showeGoodbye );
+
+//==============================
+
+// (function(){
+//     let input = 5;
+
+//     console.log(input + 5);
+// })();
+
+// (function() {
+//   let input = 10;
+//   console.log(input + 10)
+// })();
