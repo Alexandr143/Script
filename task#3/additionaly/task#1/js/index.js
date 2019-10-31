@@ -370,7 +370,65 @@
 //     console.log(input + 10);
 // }());
 
+///////////////////////////////////
+
+// const  outerFn = function (){
+//     let x = 0;
+
+//     const  innerFn = function  (){
+//         console.log (x);
+//     };
+
+//     innerFn();
+// } 
+
+// outerFn();
 
 
+// const  outerFn = function () {
+//     let x = 123;
+
+//     const  innerFn = function () {
+//         console.log (x);
+//     };
+
+//     return innerFn;
+// };
+
+// console.log (outerFn);
+
+// const fn = outerFn();
+
+// console.log (fn);
+
+// fn();
 
 
+// const outerFn = function (){
+//     let x= 123;
+
+//     return function (){
+//         x = x + 1;
+//         console.log(x);
+//     };
+// };
+
+// const fn1 = outerFn();
+
+// fn1();
+// fn1();
+// fn1();
+// fn1();
+// fn1();
+// fn1();
+
+// const fn2 = outerFn();
+
+// fn2();
+// fn2();
+// fn2();
+// fn2();
+
+const counter = function(){
+    
+}
