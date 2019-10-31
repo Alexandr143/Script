@@ -429,6 +429,56 @@
 // fn2();
 // fn2();
 
-const counter = function(){
-    
-}
+// const privateCounter = function(){
+//     let counter = 0;
+
+//     return function (){
+//         counter +=1;
+//         console.log(counter);
+//     };
+// };
+
+// const counter = privateCounter();
+
+// counter();
+// counter();
+// counter();
+// counter();
+
+
+// const numbers = [1,2,3,4,5];
+
+// const flatten = function fn(arr) {
+//     for (let elem of arr){
+//       console.log (elem)
+//     };
+//     };
+// flatten(numbers);
+
+const numbers = [1,[2,3],4,[5,6]];
+
+// const flatten = function fn(arr) {
+//     const flatArr = [];
+//     for (let elem of arr){
+//       if (typeof elem ==='number'){
+//           flatArr.push(elem);
+//       };
+//     };
+//     return flatArr;
+//     };
+// const flat = flatten (numbers);
+// console.log(flat);
+
+const flatten = function fn(arr){
+      const flatArr = [];
+
+      for  (let elem of arr){
+       const isArray = Array.isArray(elem);
+         if(isArray){
+           for (let x of elem){
+               console.log(x);
+
+           };
+          };
+      };
+};
