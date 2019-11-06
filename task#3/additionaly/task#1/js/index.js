@@ -455,7 +455,7 @@
 //     };
 // flatten(numbers);
 
-const numbers = [1,[2,3],4,[5,6]];
+
 
 // const flatten = function fn(arr) {
 //     const flatArr = [];
@@ -469,16 +469,84 @@ const numbers = [1,[2,3],4,[5,6]];
 // const flat = flatten (numbers);
 // console.log(flat);
 
-const flatten = function fn(arr){
-      const flatArr = [];
+// const flatten = function fn(arr){
+//       const flatArr = [];
+//     for (let elem  of  arr){
+//       if (typeof elem ==='number'){
+//         flatArr.push(elem);
+//       };
+//     };
+//      return flatArr;
+//     };
+//  const flat = flatten(numbers);
+//  console.log (flat);
+   
+// const numbers = [1, [2, 3], 4, [5, 6]];
+// const flatten = function fn(arr){
+//   const flatArr = [];
+// for (let elem  of  arr){
+//   const isArray = Array.isArray(elem);
+//   if (isArray){
+//     for (let x  of elem){
+//       flatArr.push(x);
+//     };
+//   } else  {
+//     flatArr.push(elem);
+//   };
+// };
+//  return flatArr;
+// };
+// const flat = flatten(numbers);
+// console.log (flat);
 
-      for  (let elem of arr){
-       const isArray = Array.isArray(elem);
-         if(isArray){
-           for (let x of elem){
-               console.log(x);
+// const flatten = function fn(arr) {
+//    for (let elem of arr){
+//      console.log(elem);
+//    };
+// };
 
-           };
-          };
-      };
-};
+// flatten(numbers);
+
+
+// const numbers = [1, [2, [3, 4, [5 ,6]]], [7, [8, [9]]], 10];
+
+// const flatten = function  self(arr){
+//   console.log('Self call back:',arr);
+//   let flatArr =[];
+//   for (let elem of arr){
+//   const isArray = Array.isArray(elem);
+//    if (isArray){ 
+//      flatArr = flatArr.concat(self(elem));
+//    } else {
+//      flatArr.push(elem);
+//    };
+//   };
+//   return flatArr;
+// };
+
+// const flat = flatten(numbers);
+// console.log (flat);
+
+
+// const fruits = ["Яблоко", ["Апельсин", "Груша"],"Яблоко", "Апельсин", "Груша","Яблоко", "Апельсин", "Груша","Яблоко",["Яблоко", "Апельсин", "Груша"], "Апельсин", "Яблоко", "Апельсин", "Груша",["Яблоко",["Груша"],"Апельсин"]];
+
+// const flatten = function self(arr){
+//   console.log('Self call back :', arr);
+//   let flatArr = [];
+//   for(let elem of arr) {
+//    const isArray = Array.isArray(elem);
+//    if (isArray){
+//      flatArr= flatArr.concat(self(elem));
+//    } else {
+//      flatArr.push(elem);
+//    };
+//   };
+//   return flatArr;
+// };
+
+// const flat = flatten (fruits);
+// console.log(flat);
+
+// const fruits = ["Яблоко", ["Апельсин", "Груша"],"Яблоко", "Апельсин", "Груша","Яблоко", "Апельсин", "Груша","Яблоко",["Яблоко", "Апельсин", "Груша"], "Апельсин", "Яблоко", "Апельсин", "Груша",["Яблоко",["Груша"],"Апельсин"]];
+
+// console.log(typeof fruits);
