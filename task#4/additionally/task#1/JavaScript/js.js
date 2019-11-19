@@ -261,3 +261,69 @@
 // shop.subtractProductAmount('bananas', 50);
 // console.log(shop);
 
+// const  a = { x : 10, y: 'hello' };
+// const  b = { z: 25 };
+// const  c = { x: 25, prop: 'qweqwe'};
+
+// Object.assign(a, b, c)
+
+// console.log(a);
+
+
+
+// const defaultSetting = {
+//     name: 'user',
+//     isActive: false, 
+//     mail: '', 
+//     theme: 'light',
+//     isAdmin: false,
+// };
+
+// const userSetting  ={
+//     name: 'Mango',
+//     mail: 'mango@gmail.com',
+//     theme: 'dark',
+// };
+
+
+// // const  setting = Object.assign(
+// //     {},
+// //     defaultSetting,
+// //     userSetting
+// //     );
+
+
+// const setting = {...defaultSetting,...userSetting};
+//     console.log(setting);
+
+//=========================================
+// const  user = {
+//     name:'Mango',
+//     age: 10,
+//     friends:300,
+//     status: 'happy',
+//     isActive: true,
+// };
+
+// const name = user.name;
+// const age = user.age;
+
+// const { 
+//    age: userAge,
+//    isActive: active,
+//    name: userName = 'user',
+//    friends = 0, 
+// } = user;
+
+// console.log(userName);
+// console.log(userAge);
+// console.log(active);
+// console.log(friends);
+
+
+// const  { name, age,... rest} = user;
+
+// console.log (name);
+// console.log (age);
+// console.log (rest);
+
