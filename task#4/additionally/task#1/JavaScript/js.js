@@ -1,4 +1,4 @@
-`use strict`;
+'use strict'
 
 // const  user = {
 //     name:'Mango',
@@ -327,3 +327,96 @@
 // console.log (age);
 // console.log (rest);
 
+
+// const user = {
+//     name: 'alex',
+//     age: 1,
+// }
+
+// const x = 'name';
+
+// // const value = user.name;
+
+// const value = user ['name']; 
+// console.log(value);
+
+
+// const user = {
+  
+//     name: 'alex',
+//     age: 2,
+//     showName(){
+//         // console.log(user.name);
+
+//         console.log ( this.name );
+//     }
+// };
+
+// user.showName();
+
+// const obj = {
+//     param: 'obj param',
+//     showThis() {
+//         console.log('this: ', this);
+//     }
+// }
+
+// obj.showThis();
+// const fn = obj.showThis;
+// console.log(fn);
+// fn();
+
+// const showThis = function () {
+//    console.log(' this:', this);
+// };
+
+// showThis();
+
+// const user = {
+//   name: 'Alex',
+// };
+
+// user.fn = showThis;
+
+// console.log(user);
+// console.log(user.fn);
+
+// user.fn();
+
+//=======================================
+
+// const obj = {
+
+//     param: 'obj param',
+//     showThis: () => {
+//         console.log('this: ', this );
+//     }
+// }
+
+// obj.showThis();
+
+// const fn = obj.showThis;
+// console.log( fn );
+// fn();
+
+// ===========================
+
+// const showName = function (a, b, c) {
+//     console.log('this.name: ', this.name);
+//     console.log('a + b', a + b);
+
+//     this.qwe = c;
+// };
+
+// const userA ={
+//     name: 'userA qwer',
+// };
+
+// const userB ={
+//     name: 'userA qwer',
+// };
+
+
+// showName.call(userA, 5, 10, 123); 
+
+// console.log(userA);
