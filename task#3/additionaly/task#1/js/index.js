@@ -551,3 +551,4 @@
 
 // console.log(typeof fruits);
 
+console.log(12);

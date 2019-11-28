@@ -420,3 +420,29 @@
 // showName.call(userA, 5, 10, 123); 
 
 // console.log(userA);
+
+//=================================
+
+// const user = {
+//     name: 'Alex',
+//     age: 20,
+//     isActive: true, 
+// };
+
+function User(name, age, isActive){
+    this.name = name;
+    this.age = age;
+    this.isActive = isActive;
+
+    this.showName = function () {
+      console.log(this.name);  
+    };
+}
+
+const mango =  new User ('Mango', 2, true);
+const poly = new User ('Poly', 3, false);
+
+console.log(mango);
+console.log(poly);
+mango.showName();
+poly.showName();
