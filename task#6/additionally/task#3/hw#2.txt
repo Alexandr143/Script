@@ -1,0 +1,50 @@
+/*
+  Ќапишите функцию-конструктор StringBuilder.
+  
+  Ќа вход она получает один параметр string - строку.
+  
+  ƒобавьте следующие методы в prototype функции-конструктора.
+  
+    - getValue() - выводит в консоль текущее значение пол€ value
+  
+    - append(str) - получает парметр str - строку и добавл€ет 
+      ее в конец значени€ пол€ value
+    
+    - prepend(str) - получает парметр str - строку и добавл€ет 
+      ее в начало значени€ пол€ value
+  
+    - pad(str) - получает парметр str - строку и добавл€ет 
+      ее в начало и в конец значени€ пол€ value
+*/
+
+
+function StringBuilder(string = "") {
+  this.value = string;
+}
+
+StringBuilder.prototype.showValue = function () {
+  console.log(`${this.value}`);
+};
+
+StringBuilder.prototype.append = function (str) {
+  this.value = this.value + str;
+};
+
+StringBuilder.prototype.prepend = function (str) {
+  this.value = str + this.value;
+};
+
+StringBuilder.prototype.pad = function (str) {
+  this.value = str + this.value + str;
+};
+
+const myString = new StringBuilder('.');
+
+myString.append('^'); 
+myString.showValue(); // '.^'
+
+myString.prepend('^'); 
+myString.showValue(); // '^.^'
+
+myString.pad('='); 
+myString.showValue(); // '=^.^='

@@ -408,11 +408,11 @@
 //     this.qwe = c;
 // };
 
-// const userA ={
+// const userA = {
 //     name: 'userA qwer',
 // };
 
-// const userB ={
+// const userB = {
 //     name: 'userA qwer',
 // };
 
@@ -429,20 +429,194 @@
 //     isActive: true, 
 // };
 
-function User(name, age, isActive){
-    this.name = name;
-    this.age = age;
-    this.isActive = isActive;
+// function User(name, age, isActive){
+//     this.name = name;
+//     this.age = age;
+//     this.isActive = isActive;
 
-    this.showName = function () {
-      console.log(this.name);  
-    };
+//     this.showName = function () {
+//       console.log(this.name);  
+//     };
+// }
+
+// const mango =  new User ('Mango', 2, true);
+// const poly = new User ('Poly', 3, false);
+
+// console.log(mango);
+// console.log(poly);
+// mango.showName();
+// poly.showName();
+
+
+// function User(name, age, isActive){
+//   const message ='Hello';
+//   this.name = name;
+//   this.age = age;
+//   this.isActive = isActive;
+
+//   this.showName = function () {
+//     console.log(message +' '+ this.name);  
+//   };
+
+//   this.addAge = function (val) {
+//     this.age += val;
+//   };
+// }
+
+// const mango =  new User ('Mango', 2, true);
+// const poly = new User ('Poly', 3, false);
+
+
+
+// mango.showName();
+// poly.showName();
+// mango.addAge(50);
+
+// console.log(mango);
+// console.log(poly);
+
+// function User ({friendsCount, name, isActive = false, age = 18, isAdmine = false }) {
+//   const message ='Hello';
+
+//   this.name = name;
+//   this.age  = age;
+//   this.isActive = isActive;
+//   this.friendsCount = friendsCount,
+//   this.isAdmine = isAdmine,
+
+//   this.showName = function () {
+//     console.log(message + ' ' + this.name);
+//   };
+
+//   this.addAge = function (val) {
+//     this.age += val;
+//   };
+// }
+
+// const mango = new User ({
+//   friendsCount : 10,
+//   name: 'Mango',
+//   age: 2,
+// });
+
+
+
+// const poly = new User ({
+//   friendsCount: 10,
+//   name:'Mango',
+//   age: 2,
+//   isActive: true, 
+// });
+
+// console.log(mango);
+// mango.showName();
+// mango.addAge(50);
+// console.log(poly);
+// poly.showName();
+// poly.addAge(56);
+
+//======================================
+
+// const shop = {
+//   products:[
+//     {name: 'apples', amount:  100, price: 30}, 
+//     {name: 'grapes', amount:  150, price: 40},
+//     {name: 'bananas', amount: 200, price: 50},
+//   ], 
+//   addProduct(product){
+//     this.products.push(product);
+//   },
+//   findProduct(productName) {
+//     for (const elem of this.products){
+//       if (elem.name === productName){
+//           return elem;
+//       }
+//     }
+//   }
+// }
+
+function Shop ({products = [], managers = [] }) {
+  this.products = products;
+  this.managers = managers;
+
+  this.addManager = function (params) {
+       const manager = new Manager(params);
+
+      this.managers.push(manager)
+  };
+
+  this.makeSale =function (managerName, productName) {
+    for (const manager of this.managers) {
+      if (manager.name  === managerName) {
+        manager.sell(productName, this.products);
+      }
+    }
+  };
+
+  this.addProduct = function (product){
+    this.products.push(product);
+  };
+
+  this.findProduct = function(ProductName){
+    for(let elem of this.products){
+      if(elem.name === productName) {
+        return elem;
+      }
+    }
+  };
+
+  this.addProductAmount = function (productName, num) {
+      console.log(`Adding ${num} ${productName}`);
+
+      const product = this.findProduct(productName);
+      product.amount += num;
+  };
+
+  this.substractProductAmount = function (productName, num) {
+    console.log(`Selling ${num} ${productName}`);
+
+    const product = this.findProduct(productName);
+    product.amount -= num;
+  };
+
+  this.getAllProducts = function () {
+    return this.products;
+  };
 }
 
-const mango =  new User ('Mango', 2, true);
-const poly = new User ('Poly', 3, false);
+const products = [
+  {name: 'apples', amount:  100, price: 30}, 
+  {name: 'grapes', amount:  150, price: 40},
+  {name: 'bananas', amount: 200, price: 50},
+];
 
-console.log(mango);
-console.log(poly);
-mango.showName();
-poly.showName();
+function Manager ({ name = 'manager', salesCount = 0}) {
+  this.name = name;
+  this.salesCount = salesCount;
+
+  this.sell = function (productName, products){
+    console.log('inside Manager.sell, productName:', productName);
+    console.log('inside Manager.sell, productName:', products);
+
+    console.log(`Selling ${productName}`);
+  };
+}
+
+const shopA = new Shop({
+  products: products
+});
+
+
+shopA.addManager({
+  name: `Mango`,
+  salesCount: 10,
+});
+
+shopA.addManager({
+  name: `Poly`,
+  salesCount: 20,
+});
+
+
+shopA.makeSale('Mango', 'apples');
+console.log(shopA);
