@@ -551,4 +551,33 @@
 
 // console.log(typeof fruits);
 
-console.log(12);
+// ===============second video from 2019============
+
+// const product = {
+//     name: 'waffles',
+//     price: 50,
+//     quantity: 20,
+// };
+
+// for (const key in product) {
+//     // console.log (key)
+//     // console.log(product[key])
+
+//     console.log (`key : ${key}`, `value : ${product[key]}`)
+// }
+
+const taskCompleted = {
+    ann: 29,
+    david: 35,
+    helen: 1, 
+    lorence: 99,
+}
+
+for (const task in taskCompleted) {
+    for ( let i = 0; i < task.lenth; i += 0){
+      if(task[i] > max){
+       max === task[i];
+      };
+    };
+    console.log(task);
+}
