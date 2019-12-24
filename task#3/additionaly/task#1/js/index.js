@@ -566,18 +566,122 @@
 //     console.log (`key : ${key}`, `value : ${product[key]}`)
 // }
 
-const taskCompleted = {
-    ann: 29,
-    david: 35,
-    helen: 1, 
-    lorence: 99,
-}
+// const taskCompleted = {
+//     ann: 29,
+//     david: 35,
+//     helen: 111, 
+//     lorence: 990,
+// }
 
-for (const task in taskCompleted) {
-    for ( let i = 0; i < task.lenth; i += 0){
-      if(task[i] > max){
-       max === task[i];
-      };
-    };
-    console.log(task);
-}
+// let max = 0;
+// let min = 0;
+// let name;
+// const keys = Object.keys(taskCompleted)
+
+// for ( const key of keys) {
+//   if ( max < taskCompleted[key]){
+//   max = taskCompleted[key];
+//   name = key;
+//   }  
+// }
+// console.log(`${name} : `, `${max}`);
+
+// const findPersonsWithMaxTasks = function (statistic){
+//   let max = 0;
+//   let name;
+//   const keys = Object.keys(statistic)
+  
+//   for ( const key of keys) {
+//     if ( max < statistic[key]){
+//     max = statistic[key];
+//     name = key;
+//     }  
+//   }
+//   return {
+//     name,
+//     max,
+//   };
+// }
+
+// console.log(findPersonsWithMaxTasks({
+//   ann: 29,
+//   david: 35,
+//   helen: 111, 
+//   lorence: 990,
+// }));
+
+// console.log(findPersonsWithMaxTasks({
+//   ann: 29,
+//   david: 3500,
+//   helen: 111, 
+//   lorence: 990,
+// }));
+
+// const countTotalSalary = function (salaries){
+//   let total = 0;
+//   const salary = Object.values(salaries);
+//   for (const value of salary){
+//      total +=  value;   
+//   }
+//   return total;
+// };
+
+
+// console.log(
+//   countTotalSalary({
+
+//   })
+// ); //0
+// console.log(
+//   countTotalSalary({
+//     mango: 100,
+//     poly: 150,
+//     alfred: 80,
+//   })
+// ); //330
+
+
+// const countTotalSalary = function (salaries) {
+//   let total = 0;
+
+//   for(const value in salaries){
+//      total += salaries[value];
+//   }
+//   return total;
+// }
+
+// console.log(
+//   countTotalSalary({
+
+//   })
+// ); //0
+// console.log(
+//   countTotalSalary({
+//     mango: 100,
+//     poly: 150,
+//     alfred: 80,
+//   })
+// ); //330
+
+
+// const users = [
+//   {name: 'Poly', age: 7, mood: 'happy'},
+//   {name: 'Mango', age: 4, mood: 'blissful'},
+//   {name: 'Ajax', age: 3, mood: 'tired'},
+// ];
+
+// const getAllPropValues = function (users, key){
+//    const values = [];
+
+//    for(const user of users) {
+//      if (key in user) {  
+//        values.push(user[key]);
+//       }
+//    }
+//  return values;
+// };
+
+// console.log(getAllPropValues(users, 'name')) // ['Poly','Mango','Ajax']
+// console.log(getAllPropValues(users, 'mood')) // ['happy','blissful','tired']
+// console.log(getAllPropValues(users, 'active')) // []
+
