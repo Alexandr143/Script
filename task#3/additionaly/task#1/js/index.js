@@ -685,3 +685,98 @@
 // console.log(getAllPropValues(users, 'mood')) // ['happy','blissful','tired']
 // console.log(getAllPropValues(users, 'active')) // []
 
+// const uploads = [
+//   {name: 'pdf', percentage: 14},
+//   {name: 'psd', percentage: 21},
+//   {name: 'mp3', percentage: 3},
+//   {name: 'flac', percentage: 7},
+// ];
+
+// const filtersUploadsWithThreshold = function (uploads, threshold) {
+//   let value = [];
+  
+//   for (const upload of uploads){
+//     if (upload.percentage <= threshold) {
+//       value.push(upload);
+//     }
+//   }
+//   return value;
+// }
+
+// console.table(filtersUploadsWithThreshold(uploads, 10));
+// console.table(filtersUploadsWithThreshold(uploads, 20));
+
+
+// const names = ['Радар','Сканер','Доход','Захват','Двигатель','Топливний бак'];
+// const prices = [ 1000, 2000, 1500, 2700, 1600,  8000];
+
+// const combine = function (names, price){
+
+//   const combined = [];
+
+//    for (let i = 0; i < names.length; i +=1){
+//        //console.log(names[i]);
+//        //console.log(price[i]);
+
+//        const object ={
+//          names: names[i],
+//          prices: price[i]
+//        }
+//        combined.push(object);
+//    }
+//    return combined;
+// }
+// const products = combine (names, prices);
+// console.table(products);
+
+
+// const names = ['Радар','Сканер','Доход','Захват','Двигатель','Топливний бак'];
+// const prices = [ 1000, 2000, 1500, 2700, 1600,  8000];
+
+// const combine = function (names, price){
+
+//   const combined = [];
+
+//    for (let i = 0; i < names.length; i +=1){
+//        //console.log(names[i]);
+//        //console.log(price[i]);
+//       const object = names[i].concat(`:${price[i]}`);
+//       combined.push(object);
+//    }
+//    return combined;
+// }
+// const products = combine (names, prices);
+// console.table(products);
+
+// const findPersonsWithMaxTasks = function (statistic){
+//   let max = 0;
+//   let name;
+//   const entries = Object.entries(statistic)
+  
+//   for ( const entry of entries) {
+//     if ( max < statistic[entry[0]]){
+//     max = statistic[entry[0]];
+//     name = entry[0];
+//     }  
+//   }
+//   return {
+//     name,
+//     max,
+//   };
+// }
+
+// console.log(findPersonsWithMaxTasks({
+//   ann: 29,
+//   david: 35,
+//   helen: 111, 
+//   lorence: 990,
+// }));
+
+// console.log(findPersonsWithMaxTasks({
+//   ann: 29,
+//   david: 3500,
+//   helen: 111, 
+//   lorence: 990,
+// }));
+
+ 
