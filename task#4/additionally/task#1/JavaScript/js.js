@@ -535,88 +535,88 @@
 //   }
 // }
 
-function Shop ({products = [], managers = [] }) {
-  this.products = products;
-  this.managers = managers;
+// function Shop ({products = [], managers = [] }) {
+//   this.products = products;
+//   this.managers = managers;
 
-  this.addManager = function (params) {
-       const manager = new Manager(params);
+//   this.addManager = function (params) {
+//        const manager = new Manager(params);
 
-      this.managers.push(manager)
-  };
+//       this.managers.push(manager)
+//   };
 
-  this.makeSale =function (managerName, productName) {
-    for (const manager of this.managers) {
-      if (manager.name  === managerName) {
-        manager.sell(productName, this.products);
-      }
-    }
-  };
+//   this.makeSale =function (managerName, productName) {
+//     for (const manager of this.managers) {
+//       if (manager.name  === managerName) {
+//         manager.sell(productName, this.products);
+//       }
+//     }
+//   };
 
-  this.addProduct = function (product){
-    this.products.push(product);
-  };
+//   this.addProduct = function (product){
+//     this.products.push(product);
+//   };
 
-  this.findProduct = function(ProductName){
-    for(let elem of this.products){
-      if(elem.name === productName) {
-        return elem;
-      }
-    }
-  };
+//   this.findProduct = function(ProductName){
+//     for(let elem of this.products){
+//       if(elem.name === productName) {
+//         return elem;
+//       }
+//     }
+//   };
 
-  this.addProductAmount = function (productName, num) {
-      console.log(`Adding ${num} ${productName}`);
+//   this.addProductAmount = function (productName, num) {
+//       console.log(`Adding ${num} ${productName}`);
 
-      const product = this.findProduct(productName);
-      product.amount += num;
-  };
+//       const product = this.findProduct(productName);
+//       product.amount += num;
+//   };
 
-  this.substractProductAmount = function (productName, num) {
-    console.log(`Selling ${num} ${productName}`);
+//   this.substractProductAmount = function (productName, num) {
+//     console.log(`Selling ${num} ${productName}`);
 
-    const product = this.findProduct(productName);
-    product.amount -= num;
-  };
+//     const product = this.findProduct(productName);
+//     product.amount -= num;
+//   };
 
-  this.getAllProducts = function () {
-    return this.products;
-  };
-}
+//   this.getAllProducts = function () {
+//     return this.products;
+//   };
+// }
 
-const products = [
-  {name: 'apples', amount:  100, price: 30}, 
-  {name: 'grapes', amount:  150, price: 40},
-  {name: 'bananas', amount: 200, price: 50},
-];
+// const products = [
+//   {name: 'apples', amount:  100, price: 30}, 
+//   {name: 'grapes', amount:  150, price: 40},
+//   {name: 'bananas', amount: 200, price: 50},
+// ];
 
-function Manager ({ name = 'manager', salesCount = 0}) {
-  this.name = name;
-  this.salesCount = salesCount;
+// function Manager ({ name = 'manager', salesCount = 0}) {
+//   this.name = name;
+//   this.salesCount = salesCount;
 
-  this.sell = function (productName, products){
-    console.log('inside Manager.sell, productName:', productName);
-    console.log('inside Manager.sell, productName:', products);
+//   this.sell = function (productName, products){
+//     console.log('inside Manager.sell, productName:', productName);
+//     console.log('inside Manager.sell, productName:', products);
 
-    console.log(`Selling ${productName}`);
-  };
-}
+//     console.log(`Selling ${productName}`);
+//   };
+// }
 
-const shopA = new Shop({
-  products: products
-});
-
-
-shopA.addManager({
-  name: `Mango`,
-  salesCount: 10,
-});
-
-shopA.addManager({
-  name: `Poly`,
-  salesCount: 20,
-});
+// const shopA = new Shop({
+//   products: products
+// });
 
 
-shopA.makeSale('Mango', 'apples');
-console.log(shopA);
+// shopA.addManager({
+//   name: `Mango`,
+//   salesCount: 10,
+// });
+
+// shopA.addManager({
+//   name: `Poly`,
+//   salesCount: 20,
+// });
+
+
+// shopA.makeSale('Mango', 'apples');
+// console.log(shopA);

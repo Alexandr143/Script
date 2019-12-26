@@ -17,29 +17,37 @@
 */
 
 const user = {
-    name: "Mango",
-    age: 20,
-    hobby: "html",
-    premium: true
-  };
+  name: 'Mango',
+  age: 20,
+  hobby: 'html',
+  premium: true,
+};
 
-  user.mood = 'happy';
+user.mood = 'happy';
+user.hobby = ' javascript';
+user.premium = 'false';
 
-  user.hobby = 'javascript';
+const {
+  mood = 'happy', 
+  hobby = ' javascript',  
+  premium = 'false'
+} = user;
 
-  user.premium = false;
+console.log(user);
 
-  const keys = Object.keys(user);
+const keys = Object.keys(user);
 
-  for (const elem of keys) {
-      console.log (`keys:`, elem);
-  };
-  
-  const couple =  Object.entries(user);
+for(const key of keys){
+   const keyArr = [];
+   keyArr.push(key);  
+};
 
-  for (const elem of couple) {
-    console.log(`Arrays`, elem);
-  };
-  console.log(user);
-  console.log(keys);
-  console.log(couple);
+console.log(keys);
+
+const entries = Object.entries(user);
+
+for ( const entry of entries){
+     const  name = entry[0];
+     const  value = entry[1];
+     console.log(entry, name, value);
+};
