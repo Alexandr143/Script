@@ -33,9 +33,7 @@
 
 // const countProps = function(obj) {
 
-//     const amountProps = Object.keys(obj); 
-    
-//     return amountProps.length;
+//    return Object.keys(obj).length;
 
 //    };
 
