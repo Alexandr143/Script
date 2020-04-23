@@ -10,11 +10,15 @@ const products = [
 ];
 
 const getAllPropValues = function(arr, prop) {
-   
+  
+  let objName = [];
+
   for (const objs of arr){
-   const obj = Object.values(objs); 
-   console.log(obj);
+      if (prop in objs){
+        objName.push(objs[prop]);
+      }
   }
+  return objName;
 };
 
 /*
