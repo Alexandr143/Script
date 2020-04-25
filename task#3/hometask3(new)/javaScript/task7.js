@@ -17,31 +17,38 @@ const Transaction = {
  */
 
 const account = {
-  // Текущий баланс счета
-  balance: 0,
+
 
   // История транзакций
   transactions: [],
+  numberId: 0,
+  
+ 
 
-  localStorage(){
-      let obj = JSON.stringify(this.transactions);
-      localStorage.setItem('transactions', obj);
-      return ;
-  },
+//   localStorage(){
+//       let obj = JSON.stringify(this.transactions);
+//       localStorage.setItem('transactions', obj);
 
-  getLocalStorage(){
-     return JSON.parse(localStorage.getItem('transactions'));
-  },
+//       return ;
+//   },
+
+//   getLocalStorage(){
+//      return JSON.parse(localStorage.getItem('transactions'));
+//   },
   
    /*
    * Метод создает и возвращает объект транзакции.
    * Принимает сумму и тип транзакции.
    */
-  createTransaction(amount, type, id) {
+  createTransaction(amount, type) {
+      for (let i = 0; i<1; i++) {
+        this.numberId +=1;
+      }
+      let id = this.numberId;
       return {
+          id,
           amount,
           type,
-          id: this.getRandomId(),
       }
   },
 
@@ -52,8 +59,8 @@ const account = {
    * после чего добавляет его в историю транзакций
    */
   deposit(amount, type) {
-       const itemDeposit = this.createTransaction(amount, type);
-       this.transactions.push(itemDeposit);
+    let obj = this.createTransaction(amount, type);
+    this.transactions.push(obj);    
   },
 
   /*
@@ -68,60 +75,81 @@ const account = {
   withdraw(amount, type) {
     const itemDeposit = this.createTransaction(amount, type);
     this.transactions.push(itemDeposit);
+    if (amount === 0) {
+        console.log('Please enter sum more than 0');
+      } else if (amount > this.getBalance()) {
+        console.log('Cash do not enough');
+      } else {
+        console.log('Transaction of whithdraw cash');
+      }
   },
 
   /*
    * Метод возвращает текущий баланс
    */
-  getBalance( ) {
-      for(const obj of this.transactions){
-       this.balance += obj.amount;
-      }
-      return this.balance;
+  getBalance() {
+      let balance = 0;
+
+    for (const transaction of this.transactions){
+        if (transaction.type === Transaction.DEPOSIT) {
+            balance += transaction.amount;
+            continue;
+        }
+        return balance;
+    }
   },
 
   /*
    * Метод ищет и возвращает объект транзации по id
    */
-  getTransactionDetails(id) {},
+  getTransactionDetails(id) {
+    let object = "Transaction have no available";
+    for (let i=0; i<this.transactions.length; i++) {
+      if (this.transactions[i].id === id) {
+        object = this.transactions[i];
+        break; 
+      }
+    }
+    return object;
+  },
 
   /*
    * Метод возвращает количество средств
    * определенного типа транзакции из всей истории транзакций
    */
   getTransactionTotal(type) {
+      let total = 0;
+      
+    for (const transaction of  this.transactions) {
+        if (transaction.type === type) {
+            total += transaction.amount;
+        }
+      }
+      return  total;
+    },
 
-  },
 
-  getRandomId(){
-   let  result = '';
-   let  word = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
-   let  max_position = word.length - 1;
-   for (let i = 0; i < 5; ++i){
-   let position = Math.floor(Math.random() * max_position);
-   result = result + word.substring(position, position + 1);
-   }
-   return result;
-},                                  
+//   getRandomId(){
+//    let  result = '';
+//    let  word = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+//    let  max_position = word.length - 1;
+//    for (let i = 0; i < 5; ++i){
+//    let position = Math.floor(Math.random() * max_position);
+//    result = result + word.substring(position, position + 1);
+//    }
+//    return this.array.push(result);
+// },                                  
 };
 
 
-console.log(account.createTransaction(200, Transaction.DEPOSIT));
-account.deposit(200,Transaction.DEPOSIT);
-account.withdraw(50,Transaction.WITHDRAW);
-account.withdraw(750,Transaction.WITHDRAW);
-account.deposit(350,Transaction.DEPOSIT);
-account.deposit(1350,Transaction.DEPOSIT);
-account.deposit(2350,Transaction.DEPOSIT);
-account.deposit(11350,Transaction.DEPOSIT);
-account.deposit(22350,Transaction.DEPOSIT);
-account.getRandomId();
-account.localStorage();
-console.table(account.getLocalStorage());
+
+account.deposit(50,Transaction.DEPOSIT);
+account.deposit(150,Transaction.DEPOSIT);
+account.deposit(50,Transaction.DEPOSIT);
+account.deposit(5000,Transaction.DEPOSIT);
+account.withdraw(10000,Transaction.WITHDRAW);
+console.log(account.getTransactionDetails(10));
 console.log(account.getBalance());
-console.log(account.getTransactionTotal());
-console.log(account.getRandomId());
-
-
-
-console.log(localStorage)
+console.table(account.transactions);
+console.log('WITHDRAWs:' + account.getTransactionTotal(Transaction.WITHDRAW));
+console.log('DEPOSIT:' + account.getTransactionTotal(Transaction.DEPOSIT));
