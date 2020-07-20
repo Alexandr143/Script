@@ -1,0 +1,28 @@
+/* ul {
+    width: 1500px;
+    height: 800px;
+    display: flex;  
+    flex-direction: row; 
+    justify-content: space-around;  
+}
+
+li {
+   align-self: center;
+   list-style-type: none;  
+}
+
+img {
+    width: 300px;
+} */
+
+
+#counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 850px;
+    font-size: 850px;
+    background-color: aqua;
+}; 
+
+
