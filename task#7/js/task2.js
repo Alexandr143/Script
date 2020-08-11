@@ -29,3 +29,13 @@ const ingredients = [
 // });
     
 
+// const node = document.querySelector('#ingredients');
+// const fragment = document.createDocumentFragment();
+
+// ingredients.forEach(function(elem){
+//   const newLi = document.createElement('li');
+//   newLi.textContent = elem;
+//   fragment.appendChild(newLi);
+// });
+
+// node.appendChild(fragment);
